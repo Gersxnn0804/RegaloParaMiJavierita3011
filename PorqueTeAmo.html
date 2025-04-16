@@ -112,7 +112,7 @@
     }
 
     #corazones-fondo {
-      position: fixed;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;
@@ -129,6 +129,7 @@
       opacity: 0;
       animation: flotar 8s infinite ease-in;
       color: white;
+      z-index:0;
     }
 
 
@@ -141,7 +142,6 @@
   </style>
 </head>
 <body>
-  <div id="corazones-fondo"></div>
   <!-- Corazones en el fondo -->
   <script>
     const emojis = ['❤️','💕','❣️','💓','💗','💖','💘','💝','💟','😍','😘','💌'];
@@ -387,6 +387,6 @@
       });
     }
   </script>
-
+  <div id="corazones-fondo"></div>
 </body>
 </html>

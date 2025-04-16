@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elige tu Regalo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f6c894;
+      font-family: 'Pacifico', cursive;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      color: #d35400;
+      font-size: 2.5em;
+    }
+
+    .carta {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 1.2em;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .producto {
+      background-color: white;
+      margin: 20px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .producto h3 {
+      color: #d35400;
+    }
+
+    .producto button {
+      background-color: #e17055;
+      border: none;
+      padding: 10px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1em;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+
+    .producto button:hover {
+      background-color: #e74c3c;
+    }
+
+    .volver {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .volver a {
+      background: #fdcb6e;
+      padding: 12px 25px;
+      border-radius: 10px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .music-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #fdcb6e;
+      padding: 8px 15px;
+      border-radius: 10px;
+      font-size: 0.8em;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="background-music" loop autoplay>
+    <source src="audio/shopee.MP3" type="audio/mp3">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <h1>Elige tu Regalo</h1>
+
+  <div class="carta">
+    Mi amor, quiero expresarte mi cariño de todas las maneras posibles. Una de ellas es dándote regalitos, pero en lugar de yo elegirlos, quiero que seas tú quien los escoja. Así que aquí te dejo un pequeño catálogo de cosas que pensé podrían gustarte. Dejame Consertirte y ¡Hazme saber cuál te gustaría tener! 💕
+  </div>
+
+  <h2>Comida</h2>
+  <div class="catalogo">
+    <!-- Producto 1 - Comida -->
+    <div class="producto">
+      <img src="IMC/Cheetos.jpg" alt="Peluche personalizado">
+      <h3>Cheetos</h3>
+      <button onclick="enviarWhatsApp('Cheetos')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/RamitasQueso.jpg" alt="Peluche personalizado">
+      <h3>Ramitas de queso</h3>
+      <button onclick="enviarWhatsApp('Ramitas de queso')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/PapaFritas.jpg" alt="Peluche personalizado">
+      <h3>Papas fritas</h3>
+      <button onclick="enviarWhatsApp('Papas fritas')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/pizza.jpg" alt="Peluche personalizado">
+      <h3>Pizza</h3>
+      <button onclick="enviarWhatsApp('Pizza')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Sushi.jpg" alt="Peluche personalizado">
+      <h3>Sushi</h3>
+      <button onclick="enviarWhatsApp('Sushi')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/hamburguesas.jpg" alt="Peluche personalizado">
+      <h3>Hamburguesas</h3>
+      <button onclick="enviarWhatsApp('Hamburguesas')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Churrascos.jpg" alt="Peluche personalizado">
+      <h3>Churrascos</h3>
+      <button onclick="enviarWhatsApp('Churrascos')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Handroll.jpg" alt="Peluche personalizado">
+      <h3>Handroll</h3>
+      <button onclick="enviarWhatsApp('Handroll')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/PolloAsado.jpg" alt="Peluche personalizado">
+      <h3>Pollo asado</h3>
+      <button onclick="enviarWhatsApp('Pollo asado')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Berlin.jpg" alt="Peluche personalizado">
+      <h3>Berlin</h3>
+      <button onclick="enviarWhatsApp('Berlin')">Lo quiero</button>
+    </div>
+
+  </div>
+
+  <h2>Cosas Hechas por Mí</h2>
+  <div class="catalogo">
+    <!-- Producto 2 - Cosas hechas por mí -->
+    <div class="producto">
+      <img src="IMC/Masaje.jpg" alt="Peluche personalizado">
+      <h3>Un masaje hecho por mí</h3>
+      <button onclick="enviarWhatsApp('Un masaje hecho por mí')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Regaloneo.jpg" alt="Peluche personalizado">
+      <h3>Una tarde de regaloneo</h3>
+      <button onclick="enviarWhatsApp('Una tarde de regaloneo')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Peliculas.jpg" alt="Peluche personalizado">
+      <h3>Una tarde de cine y chancheo</h3>
+      <button onclick="enviarWhatsApp('Una tarde de cine y chancheo')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Jugando.jpg" alt="Peluche personalizado">
+      <h3>Una tarde de series y/o juegos</h3>
+      <button onclick="enviarWhatsApp('Una tarde de series y/o juegos')">Lo quiero</button>
+    </div>
+  </div>
+
+  <h2>Salidas</h2>
+  <div class="catalogo">
+    <!-- Producto 3 - Salidas -->
+    <div class="producto">
+      <img src="IMC/Playa.jpg" alt="Peluche personalizado">
+      <h3>Salida a la playa</h3>
+      <button onclick="enviarWhatsApp('Salida a la playa')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Cine.jpg" alt="Peluche personalizado">
+      <h3>Salida al cine</h3>
+      <button onclick="enviarWhatsApp('Salida al cine')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Trampoline-jpg.jpg" alt="Peluche personalizado">
+      <h3>Salida al trampolín park</h3>
+      <button onclick="enviarWhatsApp('Salida al trampolín park')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Dulce.jpg" alt="Peluche personalizado">
+      <h3>Salida a comer algo dulce</h3>
+      <button onclick="enviarWhatsApp('Salida a comer algo dulce')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Parque.jpeg" alt="Peluche personalizado">
+      <h3>Salida al parque</h3>
+      <button onclick="enviarWhatsApp('Salida al parque')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Fantasilandia.jpg" alt="Peluche personalizado">
+      <h3>Salida a fantasilandia</h3>
+      <button onclick="enviarWhatsApp('Salida a fantasilandia')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/FastFood.jpg" alt="Peluche personalizado">
+      <h3>Salida a comer</h3>
+      <button onclick="enviarWhatsApp('Salida a comer')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Saliendo.png" alt="Peluche personalizado">
+      <h3>Salida donde tú quieras</h3>
+      <button onclick="enviarWhatsApp('Salida donde tú quieras')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Motel.jpg" alt="Peluche personalizado">
+      <h3>Salida al motel</h3>
+      <button onclick="enviarWhatsApp('Salida al motel')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Mall.jpg" alt="Peluche personalizado">
+      <h3>Salida de Shopping</h3>
+      <button onclick="enviarWhatsApp('Salida a comprar')">Lo quiero</button>
+    </div>
+
+  </div>
+
+  <h2>Cosas Materiales</h2>
+  <div class="catalogo">
+    <!-- Producto 4 - Cosas Materiales -->
+    <div class="producto">
+      <img src="IMC/Peluche.jpg" alt="Peluche personalizado">
+      <h3>Peluche personalizado</h3>
+      <button onclick="enviarWhatsApp('Peluche personalizado')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/PulseraGoals.png" alt="Peluche personalizado">
+      <h3>Pulsera de Pareja</h3>
+      <button onclick="enviarWhatsApp('Pulsera Goals')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Pulsera.jpg" alt="Peluche personalizado">
+      <h3>Pulsera</h3>
+      <button onclick="enviarWhatsApp('Pulsera')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Watero.jpg" alt="Peluche personalizado">
+      <h3>Guatero para la watita</h3>
+      <button onclick="enviarWhatsApp('Guatero para la watita')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Lakers.jpg" alt="Peluche personalizado">
+      <h3>Polerón a tu elección</h3>
+      <button onclick="enviarWhatsApp('Polerón a tu elección')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Vestido.jpg" alt="Peluche personalizado">
+      <h3>Vestido a tu elección</h3>
+      <button onclick="enviarWhatsApp('Polerón a tu elección')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/Pantalones.jpg" alt="Peluche personalizado">
+      <h3>Pantalon a tu elección</h3>
+      <button onclick="enviarWhatsApp('Polerón a tu elección')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/polera.jpg" alt="Peluche personalizado">
+      <h3>Polera a tu elección</h3>
+      <button onclick="enviarWhatsApp('Polerón a tu elección')">Lo quiero</button>
+    </div>
+
+    <div class="producto">
+      <img src="IMC/NewBalance.jpg" alt="Peluche personalizado">
+      <h3>Zapatillas a tu elección</h3>
+      <button onclick="enviarWhatsApp('Polerón a tu elección')">Lo quiero</button>
+    </div>
+  </div>
+
+  <div class="volver">
+    <a href="PorqueTeAmo.html">Volver a la página principal</a>
+  </div>
+
+  <a href="#" class="music-toggle" onclick="toggleMusic()">Apagar música</a>
+
+  <script>
+    function enviarWhatsApp(producto) {
+      const mensaje = `Hola amorcito:(, me gustaria pedirte esto: ${producto}. ¡Gracias!`;
+      const telefono = '56973039959';  // Aquí puedes poner el número de teléfono de WhatsApp de tu novia
+      window.open(`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`);
+    }
+    function toggleMusic() {
+      const audio = document.getElementById('background-music');
+      const toggleButton = document.querySelector('.music-toggle');
+
+      if (audio.paused) {
+        audio.play();
+        toggleButton.textContent = "Apagar música";
+      } else {
+        audio.pause();
+        toggleButton.textContent = "Activar música";
+      }
+    }
+  </script>
+
+</body>
+</html>

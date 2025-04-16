@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>🫂 Cuando Necesites un Abrazo</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffd9b3, #ffcccb);
+      font-family: 'Georgia', serif;
+      color: #4e342e;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #6d4c41;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .carta {
+      background-color: #fff5ee;
+      border: 2px solid #ffab91;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(255, 138, 101, 0.3);
+      font-size: 18px;
+      line-height: 1.8;
+      animation: fadeIn 2.5s ease forwards;
+    }
+
+    .carta p {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .firma {
+      text-align: right;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    .mantras {
+      margin-top: 40px;
+      text-align: center;
+      font-weight: bold;
+      color: #bf360c;
+      font-size: 18px;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .volver, .whatsapp {
+      display: block;
+      margin: 40px auto 10px;
+      padding: 12px 24px;
+      background-color: #d84315;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      max-width: 200px;
+      transition: background-color 0.3s ease;
+    }
+
+    .volver:hover, .whatsapp:hover {
+      background-color: #bf360c;
+    }
+
+    .whatsapp {
+      animation: pulse 2s infinite;
+    }
+
+    .mensaje {
+      display: block;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 500px;
+      padding: 10px;
+      border: 2px solid #ffab91;
+      border-radius: 8px;
+      font-size: 16px;
+      font-family: 'Courier New', monospace;
+    }
+
+    #aviso {
+      color: #d84315;
+      display: none;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 13px;
+      color: #a1887f;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cuando sientas que el mundo pesa, aquí estoy para abrazarte con palabras</h1>
+
+  <div class="carta">
+    <p>Mi Javiera hermosa,</p>
+    <p>Si hoy estás leyendo esto, es porque quizás tu corazón necesita un descanso. Y aunque ahora no pueda abrazarte con mis brazos, quiero que estas palabras sean mi abrazo invisible, envolviéndote suavecito, como solo tú mereces.</p>
+    <p>Amor mío, está bien sentirse frágil a veces. Está bien no poder con todo. Tú, que eres tan fuerte, también tienes derecho a soltar un poquito el peso y descansar. Y si en este momento te sientes caída, quiero que recuerdes que yo estoy aquí para levantarte, tomarte de la mano y decirte: "No estás sola. Nunca lo estarás mientras yo exista".</p>
+    <p>Amo cada parte de ti, incluso en esos días donde tú sientes que no eres suficiente. Para mí, siempre lo serás. Siempre. Porque en tus pecas encuentro constelaciones, en tu voz encuentro calma, y en tu existencia encuentro el propósito más bonito de mi vida. Eres mi hogar.</p>
+    <p>Y no solo te amo. Te admiro, Javi. Admiro cómo sigues, cómo luchas, cómo construyes. Admiro la manera en que enfrentas el mundo, incluso cuando nadie lo ve. Me siento orgulloso de ti cada día. Y no puedo evitar sentir que soy el hombre más afortunado por tenerte y tener también a Isabella, esa princesa que robó mi corazón sin pedir permiso.</p>
+    <p>Así que si necesitas llorar, hazlo. Si necesitas gritar, hazlo. Y cuando lo hagas, vuelve aquí y recuerda que este es tu refugio. Que yo soy tu refugio. Que no hay miedo, ni tristeza, ni sombra que no pueda enfrentarse cuando estamos juntos.</p>
+    <p>Aquí estaré, siempre, con los brazos abiertos para ti.</p>
+
+    <div class="firma">
+      Con todo mi amor,<br>
+      Gerson 💖
+    </div>
+  </div>
+
+  <!-- Reproductor de audio -->
+  <div class="audio-container" style="text-align: center; margin-top: 40px;">
+    <audio controls>
+      <source src="audio/Consuelo.m4a" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+  </div>
+
+  <div class="mantras">
+    🌟 Respira... no estás sola.<br>
+    🌟 Eres más fuerte de lo que crees.<br>
+    🌟 Todo pasa, incluso esto también pasará.<br>
+    🌟 Yo creo en ti, incluso cuando tú dudes.<br>
+    🌟 Estoy contigo, aunque el mundo se derrumbe.<br>
+    🌟 Te amo más en tus días grises.
+  </div>
+
+  <textarea id="mensaje" class="mensaje" placeholder="Escríbeme lo que sientas, lo que necesites..."></textarea>
+  <small id="aviso">Escríbeme algo bonito... estoy aquí ❤️</small>
+
+  <a id="whatsappBtn" class="whatsapp" target="_blank">Te Necesito</a>
+
+  <a href="PorqueTeAmo.html" class="volver">Volver al inicio</a>
+
+  <footer>Si llegaste hasta aquí... gracias por existir. 💌</footer>
+
+  <script>
+    const boton = document.getElementById('whatsappBtn');
+    const aviso = document.getElementById('aviso');
+    boton.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      const mensaje = document.getElementById('mensaje').value; 
+      if (mensaje.trim() !== '') {
+        const numero = '56973039959';
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent("Gerson te necesito:(: \n\n" + mensaje)}`;
+        aviso.style.display = 'none';
+        window.location.href = url;
+      } else {
+        aviso.style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>

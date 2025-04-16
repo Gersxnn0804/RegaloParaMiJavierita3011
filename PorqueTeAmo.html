@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Porque Te Amo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #a85eda, #6a1b9a);
+      color: #ffffff;
+      padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1, p {
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .boton-opcion {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 10px auto;
+      padding: 15px 20px;
+      background-color: #a85eda;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .boton-opcion:hover {
+      background-color: #7c4dcb;
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-contenido {
+      background-color: #fff0ff;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(106, 27, 154, 0.5);
+      text-align: center;
+      z-index: 20;
+    }
+
+    .modal-contenido h2 {
+      font-weight: bold;
+      color: #6a1b9a;
+      margin-bottom: 10px;
+    }
+
+    .modal-contenido p {
+      margin-top: 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 80%;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button.enviar {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button.enviar:hover {
+      background-color: #4a126d;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 24px;
+      opacity: 0;
+      animation: flotar 8s infinite ease-in;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      10% { opacity: 1; }
+      50% { opacity: 0.7; transform: translateY(-300px) translateX(20px); }
+      100% { opacity: 0; transform: translateY(-600px) translateX(-20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Corazones en el fondo -->
+  <script>
+    const emojis = ['❤️','💕','❣️','💓','💗','💖','💘','💝','💟','😍','😘','💌'];
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("span");
+      heart.classList.add("heart");
+      heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.fontSize = `${16 + Math.random() * 30}px`;
+      heart.style.animationDelay = `${Math.random() * 8}s`;
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <h1>Distintas maneras de amarte para distintos momentos que necesites</h1>
+  <p>Este rincón es solo tuyo, para cuando el corazón necesite un abrazo en forma de palabras, sonidos o recuerdos</p>
+
+  <button class="boton-opcion" onclick="abrirModalAmor()">Cuando quieras saber cuánto te amo</button>
+  <button class="boton-opcion" onclick="abrirModalAbrazo()">Cuando necesites un abrazo</button>
+  <button class="boton-opcion" onclick="abrirModalRecordarme()">Cuando necesites recordarme</button>
+  <button class="boton-opcion" onclick="abrirModalVoz()">Cuando extrañes mi voz</button>
+  <button class="boton-opcion" onclick="abrirModalTriste()">Cuando te sientas triste</button>
+  <button class="boton-opcion" onclick="abrirModalFuturo()">Cuando dudes del futuro</button>
+  <button class="boton-opcion" onclick="abrirModalEnojo()" >Cuando te enojes conmigo</button>
+  <button class="boton-opcion" onclick="abrirModalLogro()" >Cuando cumplas un logro</button>
+  <button class="boton-opcion" onclick="abrirModalRegalo()" >Cuando quieras un regalo especial</button>
+
+  <!-- Modal CuantoTeAmo -->
+  <div id="modalAmor" class="modal">
+    <div class="modal-contenido">
+      <h2>Te amo tanto que ni el universo es suficiente</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Las dos cosas que más amo de ti</p>
+      <input type="text" id="contrasenaInput" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="verificarContrasena()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Modal CuandoNecesitesUnAbrazo -->
+  <div id="modalAbrazo" class="modal">
+    <div class="modal-contenido">
+      <h2>Cuando tu cielo esté gris... yo seré el loco que llegue con brochas de amor a pintarlo de nuevo.</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Hay 2 apodos en especial que me encanta decirte, cualquiera de los 2 es la contraseña</p>
+      <input type="text" id="contrasenaAbrazo" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="verificarAbrazo()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Modal CuandoNecesitesRecordarme -->
+  <div id="modalRecordarme" class="modal">
+    <div class="modal-contenido">
+      <h2>¿Me extrañas? Yo también a ti, cada segundo...<br>pero yo no te olvido ni aunque el universo me empuje a hacerlo.</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Lugar de la primera salida que tuvimos</p>
+      <input type="text" id="contrasenaRecordarme" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="verificarRecordarme()">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Modal CuandoExtrañesMiVoz-->
+  <div id="modalVoz" class="modal">
+    <div class="modal-contenido">
+      <h2>Mi voz te busca cuando tú me extrañas...</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Te importa?</p>
+      <input type="text" id="ContrasenaVoz" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarVoz()">Enviar</button>
+    </div>
+  </div>
+
+  <div id="modalTriste" class="modal">
+    <div class="modal-contenido">
+      <h2>Respira amorcito... no estas sola.</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Tu pelicula favorita animada.</p>
+      <input type="text" id="ContrasenaTriste" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarTriste()">Enviar</button>
+    </div>
+  </div>
+
+  <div id="modalFuturo" class="modal">
+    <div class="modal-contenido">
+      <h2>Nuestro futuro ya lo soñé contigo… ahora solo falta vivirlo.</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Pais al que quieres viajar.</p>
+      <input type="text" id="ContrasenaFuturo" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarFuturo()">Enviar</button>
+    </div>
+  </div>
+  
+  <div id="modalEnojo" class="modal">
+    <div class="modal-contenido">
+      <h2>Aunque estés enojada, no dejo de amarte</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: 2 palabras, 5 letras</p>
+      <input type="text" id="ContrasenaEnojo" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarEnojo()">Enviar</button>
+    </div>
+  </div>
+
+  <div id="modalLogro" class="modal">
+    <div class="modal-contenido">
+      <h2>Felicidades amor, Te mereces el mundo.</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Tu snack favorito mi niña</p>
+      <input type="text" id="ContrasenaLogro" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarLogro()">Enviar</button>
+    </div>
+  </div>
+
+  <div id="modalRegalo" class="modal">
+    <div class="modal-contenido">
+      <h2>Porque los regalos especiales llenan el alma...</h2>
+      <p>Ingrese contraseña:</p>
+      <p>Pista: Tu cantante Favorito</p>
+      <input type="text" id="ContrasenaRegalo" placeholder="Escribe aquí...">
+      <br>
+      <button class="enviar" onclick="VerificarRegalo()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirModalAmor(){
+      document.getElementById("modalAmor").style.display = "block";
+    }
+    function abrirModalAbrazo(){
+      document.getElementById("modalAbrazo").style.display = "block";
+    }
+    function abrirModalRecordarme(){
+      document.getElementById("modalRecordarme").style.display= "Block";
+    }
+    function abrirModalVoz(){
+      document.getElementById("modalVoz").style.display= "Block";
+    }
+    function abrirModalTriste(){
+      document.getElementById("modalTriste").style.display= "Block";
+    }
+    function abrirModalFuturo(){
+      document.getElementById("modalFuturo").style.display= "Block";
+    }
+    function abrirModalEnojo(){
+      document.getElementById("modalEnojo").style.display= "Block";
+    }
+    function abrirModalLogro(){
+      document.getElementById("modalLogro").style.display= "Block";
+    }
+    function abrirModalRegalo(){
+      document.getElementById("modalRegalo").style.display= "Block";
+    }
+
+    function verificarContrasena() {
+      const input = document.getElementById("contrasenaInput").value.toLowerCase();
+      if (input.includes("ojos") && input.includes("pecas")) {
+        window.location.href = "CuantoTeAmo.html";
+      } else {
+        alert("Contraseña incorrecta. Intenta con las dos cosas que más amo de ti 🥰");
+      }
+    }
+    function verificarAbrazo() {
+      const input = document.getElementById("contrasenaAbrazo").value.toLowerCase();
+      if (input.includes("esquizofrenica") || input.includes("mi niña") || input.includes("mi nina")) {
+        window.location.href = "NecesitasUnAbrazo.html";
+      } else {
+        alert("Contraseña incorrecta. Intenta con esos apodos tan nuestros 💌");
+      }
+    }
+    function verificarRecordarme() {
+      const input = document.getElementById("contrasenaRecordarme").value.toLowerCase().trim();
+      if (input === "insert coin") {
+        window.location.href = "Recordarme.html";
+      } else {
+        alert("Piénsalo bien amorcito... fue un lugar mágico 🎮💕");
+      }
+    }
+    function VerificarVoz() {
+      const clave = document.getElementById("ContrasenaVoz").value.toLowerCase().trim();
+      if (clave === "no me importa nada") {
+        window.location.href = "ExtrañasMiVoz.html";
+      } else {
+        alert("Intenta con la frase correcta... ¿Te importa?");
+      }
+    }
+    function VerificarTriste() {
+      const clave = document.getElementById("ContrasenaTriste").value.toLowerCase().trim();
+      if (clave === "la princesa y el sapo") {
+        window.location.href = "TeSientesTriste.html";
+      } else {
+        alert("Intenta con tu pelicula favorita... quizas la respuesta esta en un sapo🐸");
+      }
+    }
+    function VerificarFuturo() {
+      const clave = document.getElementById("ContrasenaFuturo").value.toLowerCase().trim();
+      if (clave === "colombia") {
+        window.location.href = "DudasDelFuturo.html";
+      } else {
+        alert("Intenta con otro pais... Quizas donde esta cartagena?");
+      }
+    }
+    function VerificarEnojo() {
+      const clave = document.getElementById("ContrasenaEnojo").value.toLowerCase().trim();
+      if (clave === "te amo") {
+        window.location.href = "EstasEnojada.html";
+      } else {
+        alert("Intenta con otra cosa... quizas la ciudad del chisme ayudaria, tqm chica indiscreta");
+      }
+    }
+    function VerificarLogro() {
+      const clave = document.getElementById("ContrasenaLogro").value.toLowerCase().trim();
+      if (clave === "cheetos") {
+        window.location.href = "CumplesUnLogro.html";
+      } else {
+        alert("Intenta con otra cosa... Quizas unos snacks que son como palitos amarillos?");
+      }
+    }
+    function VerificarRegalo() {
+      const clave = document.getElementById("ContrasenaRegalo").value.toLowerCase().trim();
+      if (clave === "darkiel") {
+        window.location.href = "QuieresUnRegalo.html";
+      } else {
+        alert("Intenta con otra cosa... No se porque me gustas tanto, sera por como te haces sentir🎶");
+      }
+    }
+
+    // Cerrar cualquier modal al hacer clic fuera de él
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

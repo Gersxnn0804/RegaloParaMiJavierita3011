@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Extrañas mi voz</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #eb8787; /* Rojo pastel */
+      color: #333;
+      text-align: center;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: aparecer 1.5s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .audio-container {
+      margin-top: 20px;
+      position: relative;
+    }
+
+    audio {
+      width: 80%;
+      margin-top: 10px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .onda {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: expandir 4s infinite ease-in-out;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    @keyframes expandir {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .estrellas {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .estrella {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      animation: parpadeo 2.5s infinite;
+    }
+
+    @keyframes parpadeo {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .mensaje-emotivo {
+      max-width: 700px;
+      margin: 30px auto 0;
+      font-size: 1.1em;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      color: #444;
+      font-style: italic;
+      transition: transform 0.3s ease;
+    }
+
+    .mensaje-emotivo:hover {
+      transform: scale(1.01);
+    }
+
+    .volver-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 25px;
+      background-color: #fff;
+      color: #d24b4b;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease, color 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .volver-btn:hover {
+      background-color: #ffd4d4;
+      color: #a52a2a;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Cuando tu corazón me busque... mi voz va a encontrarte</h1>
+
+  <div class="contenido">
+
+    <div class="audio-container">
+      <div class="audio-container" style="text-align: center; margin-top: 40px;">
+        <audio controls>
+          <source src="audio/TesientesTriste.m4a" type="audio/mpeg">
+          Tu navegador no soporta la reproducción de audio.
+        </audio>
+      </div>
+
+    <p class="mensaje-emotivo">
+      Porque a veces, lo único que necesitamos para sentirnos cerquita… es una voz que nos recuerde que somos amados.
+      Esta es mi voz, solo para ti. Cuando la escuches, piensa que estoy abrazándote con cada palabra.
+      Te extraño a cada segundo en que no te escucho, y por eso… te dejo la mía.
+    </p>
+    <a href="PorqueTeAmo.html" class="volver-btn">Volver a la página principal</a>
+  </div>
+
+  <!-- Estrellas -->
+  <div class="estrellas" id="estrellas"></div>
+  
+
+  <script>
+    // Generador de estrellas
+    const estrellasContainer = document.getElementById("estrellas");
+    for (let i = 0; i < 100; i++) {
+      const estrella = document.createElement("div");
+      estrella.classList.add("estrella");
+      estrella.style.top = Math.random() * 100 + "%";
+      estrella.style.left = Math.random() * 100 + "%";
+      estrella.style.animationDelay = Math.random() * 2 + "s";
+      estrellasContainer.appendChild(estrella);
+    }
+  </script>
+
+</body>
+</html>

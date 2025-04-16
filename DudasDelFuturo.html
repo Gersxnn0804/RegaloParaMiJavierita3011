@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No dudes de nuestro futuro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #a9cde3, #dceef9);
+      position: relative;
+      min-height: 100vh;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    .sky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ffe6e6, #ffd9ec, #ffe6ff);
+      overflow: hidden;
+      z-index: -2;
+    }
+
+    .sky::before {
+      content: '';
+      position: absolute;
+      width: 2000px;
+      height: 2000px;
+      background: radial-gradient(white 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: twinkle 5s linear infinite;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    .cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      z-index: 0;
+      box-shadow: 
+        60px 0 rgba(255,255,255,0.8),
+        120px 10px rgba(255,255,255,0.8),
+        180px 0 rgba(255,255,255,0.8);
+      opacity: 0;
+      animation: moveClouds 20s linear infinite, fadeInClouds 3s forwards;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+    }
+
+    .cloud::before {
+      width: 120px;
+      height: 90px;
+      top: -30px;
+      left: 40px;
+    }
+
+    .cloud::after {
+      width: 140px;
+      height: 100px;
+      top: -50px;
+      left: -40px;
+    }
+
+    @keyframes moveClouds {
+      0% { transform: translateX(-300px); }
+      100% { transform: translateX(100vw); }
+    }
+
+    @keyframes fadeInClouds {
+      0% { opacity: 0; }
+      100% { opacity: 0.7; }
+    }
+
+    .card {
+      background-color: #fffaf0;
+      border: 2px solid #deb887;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 60px auto;
+      box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+      font-family: 'Courier New', monospace;
+      font-size: 18px;
+      line-height: 2;
+      color: #3e2723;
+      opacity: 0;
+      animation: fadeIn 2.5s ease forwards;
+      animation-delay: 0.5s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #444;
+    }
+
+    .card p {
+      font-size: 18px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .button-top-right, .button-top-left {
+      position: fixed;
+      top: 15px;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+      background-color: #ffe6ec;
+      color: #444;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .button-top-right:hover, .button-top-left:hover {
+      background-color: #ffd4e3;
+    }
+
+    .button-top-right {
+      right: 15px;
+    }
+
+    .button-top-left {
+      left: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cielo -->
+  <div class="sky"></div>
+
+  <!-- Estrellas -->
+  <div class="stars" id="stars-container"></div>
+
+  <!-- Botones -->
+  <button class="button-top-right" id="toggle-sound">🔇</button>
+  <button class="button-top-left" onclick="window.location.href='PorqueTeAmo.html'">← Volver</button>
+
+  <!-- Carta -->
+  <div class="card">
+    <h1>Una vida soñada contigo</h1>
+    <p>
+Amor…
+
+Cuando me pierdo imaginando el futuro, es imposible que no aparezcas tú.
+No como una idea lejana, ni como algo que espero que pase,
+sino como esa certeza suave que me abraza el alma, como ese hogar que no es un lugar, sino una persona. Tú.
+El lugar al que siempre quiero volver. 💙
+
+A veces cierro los ojos y me veo tomándote la mano mientras caminamos por Colombia,
+ese país que siempre has querido visitar,
+sintiendo su música, sus colores, su gente, y tu emoción brillándome en los ojos.
+Y ahí, en medio de todo, aparece Cartagena.
+Nos imagino riéndonos entre sus calles cálidas, comiendo algo rico,
+y viendo cómo el atardecer nos pinta la piel de naranja, como si el sol nos estuviera regalando una postal solo para nosotros.
+Y yo pensando: cómo puede existir algo tan perfecto.
+
+También me imagino contigo en Canadá, construyendo nuestra historia desde cero.
+Un hogar nuevo, un idioma que aprender, un frío que no nos asusta porque nos tenemos.
+Nos veo abrazados fuerte, cocinando unos fideos con salsa para el bajoncito, o comiendo unos cheetos porque sé que te encantan,
+Y entre tanto caos bonito, saber que cada día a tu lado es un regalo.
+
+Me sueño contigo recorriendo el mundo.
+Guardando recuerdos como si fueran tesoros en cada rincón.
+Escuchando nuestras canciones en la carretera, gritando los coros como si nadie nos oyera.
+Y besándote en cada lugar, como si fuera la primera vez, porque contigo todo siempre se siente nuevo, intenso, mágico.
+
+Me veo compartiendo la vida, la risa, los silencios.
+Viviendo esas tardes donde solo queremos ver películas abrazados.
+Y aunque me gane el sueño, me quedo ahí… porque no hay mejor plan que verte feliz.
+Y no importa si vi o no la película, porque lo que realmente me importa… es estar ahí contigo.
+
+También me imagino nuestra familia.
+Y cuando pienso en ella, Isabella siempre aparece en el centro de todo.
+Me veo jugando con ella, escuchando su risa mientras corre por la casa, mientras me maquilla con brillos y sombras y yo aguantando solo para verla feliz.
+Aprendiendo a hacer peinados solo para intentar peinarla, aunque intentar peinar a la isa es una batalla difícil de ganar jajajaja
+Me veo jugando a las tacitas de té con ella, siendo su invitado de honor en cada fiesta imaginaria,
+llevándola al zoológico, al Happyland, a comer pizza,
+patinando sobre hielo aunque nos caigamos mil veces y ríamos más aún.
+Haciendo mil planes, pero con ustedes dos a mi lado.
+Porque ese es mi sueño… no hacer cosas grandes, sino vivirlas con ustedes.
+
+Y quizás, si la vida lo quiere, con esos dos hijos que hemos imaginado tantas veces y que hasta sustos hemos pasado…
+Una familia que se ríe, que se abraza fuerte, que se cuida.
+Una familia unida, viajando por el mundo, conociendo maravillas, pero sabiendo que la más grande está en casa: el amor que compartimos.
+
+Y sobre todo, me veo contigo, viviendo una vida real.
+No perfecta. Sino nuestra.
+Con días buenos, algunos no tanto, pero siempre juntos.
+Creciendo, cayendo y volviéndonos a levantar. Aprendiendo a amarnos mejor cada día, y abrazándonos más fuerte cada vez que lo necesitemos.
+
+Porque puede que no tenga todas las respuestas,
+pero si hay algo que tengo claro es que ese futuro,
+ese futuro que sueño despierto…
+lo quiero contigo.
+Solamente contigo. 💫
+    </p>
+  </div>
+    <!-- Música -->
+  <audio id="bg-music" loop>
+    <source src="audio/gh.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("toggle-sound");
+
+    let isMuted = false;
+    let hasPlayed = false;
+
+    // Botón para mutear/desmutear
+    toggleBtn.addEventListener("click", () => {
+      if (!hasPlayed) {
+        music.play().catch(err => console.log("Error al reproducir:", err));
+        hasPlayed = true;
+      }
+      isMuted = !isMuted;
+      music.muted = isMuted;
+      toggleBtn.textContent = isMuted ? "🔇" : "🔊";
+    });
+
+    // Iniciar música al primer clic/tap en cualquier parte de la página
+    document.body.addEventListener("click", () => {
+      if (!hasPlayed) {
+        music.play().catch(err => console.log("Error al reproducir:", err));
+        hasPlayed = true;
+        music.muted = false;
+        toggleBtn.textContent = "🔊";
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>

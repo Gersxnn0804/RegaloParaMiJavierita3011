@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu álbum en mí</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p.subtitulo {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .album {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .foto {
+      background: white;
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .foto img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .foto p {
+      font-size: 1em;
+      color: #444;
+    }
+
+    .video {
+      background: white;
+      border-radius: 20px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .video img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .video p {
+      font-size: 1em;
+      color: #444;
+    }
+
+    .volver {
+      margin-top: 40px;
+      padding: 10px 20px;
+      background: #ff6f91;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+        .video-preview {
+      width: 100%;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .overlay video {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 20px;
+    }
+
+    .volver:hover {
+      background: #ff4f77;
+    }
+    .video-preview {
+      width: auto; /* Tamaño ajustado */
+      max-width: 300px; /* Tamaño máximo */
+      height: 300px;
+      border-radius: 15px;
+      cursor: pointer;
+      margin: -1 auto; /* Centrado horizontal */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Sabes qué es eterno? Cada recuerdo contigo</h1>
+  <p class="subtitulo">Este álbum está hecho con pedacitos de ti y de mí, porque yo no olvido ni aunque el universo me empuje a hacerlo 🪐</p>
+
+  <div class="album">
+    <div class="foto">
+      <img src="IMC/InsertCoin.jpg" alt="Primera Salida Juntos">
+      <p>El Insert coin, la primera salida donde aun eramos desconocidos, donde pase a ser tu enemigo y en silencio nos enamoramos.</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/PrimerRamo.jpg" alt="La primera vez que te regale flores.">
+      <p>Prometí no regalar flores… pero vi esas y eran igual de hermosas que tú y no lo dude. Ese día fuimos al cine y vimos Venom 3, tomaste mi mano por primera vez y sentia mi corazon latiendo como un tambor.</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/PrimerMote.jpg" alt="El primer mote que me regalaste">
+      <p>Este fue el primer mote con huesillo que me regalaste, hacia mucha calor y quisiste llevarme uno. Esa pequeña acción fue una caricia al alma… nadie se había preocupado así por mí, y menos por algo tan sencillo</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/HermosaFoto.jpg" alt="El dia en que te dedique la luna y me enamore de ti">
+      <p>Despues del concierto de duki fui a verte, ese dia por primera vez te dedique la luna que estaba igual de hermosa que tu esa madrugada y entonces supe que esos latidos por ti cada vez se hacian mas fuertes. </p>
+    </div>
+    <div class="foto">
+      <img src="IMC/Isaconoci.jpg" alt="Primer dia que conoci a la isabella">
+      <p>Este fue el primer día que conocí a Isabella. Llámame loco si quieres, pero esa niñita no ha hecho más que robarme el corazón. Y aunque ella no lo sepa, la quiero con la misma intensidad con la que te amo a ti.
+      </p>
+    </div>
+    <div class="foto">
+      <img src="IMC/CollarJavi.jpg" alt="Collar de Javiera">
+      <p>Solo me iba enamorando cada vez mas de ti, te veia en todas partes y solo queria entregarte el mundo, pero no queria que pensaras que trabajaba en intensamente, asi que decidi regalarte esto para que me llevaras siempre contigo.</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/MoteConhuesillo.jpg" alt="Mote con huesillos">
+      <p>No se si te lo habre dicho, pero estos mote con huesillo me encantaban, sobre todo porque tu me los regalabas y eran mas dulces que el resto, igual de dulce y rico que usted mi amor.</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/Supermercado.jpg" alt="Javi en carrito">
+      <p>Esta foto me encanta, es una de mis favoritas. Expresa tu verdadera esencia y aqui solo me hacias entender lo esquizofrenica que eres y que realmente entiendes la puta vibra. Amo esta parte de ti.</p>
+    </div>
+    <div class="foto">
+      <img src="IMC/LavadoDientes.jpg" alt="Nuestra Primera Noche Juntos en la playa">
+      <p>La primera noche de nuestro viaje al Tabo, estaba tan nervioso por pasar ese fin de semana contigo que queria que todo saliera perfecto... Y asi fue. </p>
+    </div>
+    <div class="foto">
+      <img src="IMC/WakeUp.jpg" alt="Buenos dias">
+      <p>Recién despertando, jajaja. No podía creer que con tan poco tiempo conociéndonos ya estuviéramos compartiendo un fin de semana juntos. Pero contigo, el tiempo nunca fue una duda... solo una excusa para seguir quedándome.</p>
+    </div>
+    <div class="video" onclick="expandirVideo('IMC/darkiel.mp4')">
+      <video class="video-preview" autoplay muted loop playsinline>
+        <source src="IMC/darkiel.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+      <p>Disfrutando de la playa, donde solo éramos tú y yo, siendo completamente nosotros mismos. Esos momentos quedaron grabados en la eternidad, y jamás los olvidaré.</p>
+    </div>
+    <div class="video" onclick="expandirVideo('IMC/Racista.mp4')">
+      <video class="video-preview" autoplay muted loop playsinline>
+        <source src="IMC/Racista.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+      <p>Pequeño momento donde declaramos un crimen de guerra, ser racistas. jajaj</p>
+    </div>
+    <div class="video" onclick="expandirVideo('IMC/morao.mp4')">
+      <video class="video-preview" autoplay muted loop playsinline>
+        <source src="IMC/morao.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+      <p>Que quieres que te diga, Somos la pareja mas hermosa que puede existir, Te amo con la misma intensidad de millones de estrellas explotando al mismo tiempo.</p>
+    </div>
+    <div class="video" onclick="expandirVideo('IMC/DeoÑatoso.mp4')">
+      <video class="video-preview" autoplay muted loop playsinline>
+        <source src="IMC/DeoÑatoso.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+      <p>Amo cuando jugueteamos de esta y mil maneras, me haces reir mucho y entiendo que me haces feliz dia a dia.</p>
+    </div>
+    <div class="video" onclick="expandirVideo('IMC/ondulao.mp4')">
+      <video class="video-preview" autoplay muted loop playsinline>
+        <source src="IMC/ondulao.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+      <p>Disfrutando de la playa, donde solo éramos tú y yo, siendo completamente nosotros mismos. Esos momentos quedaron grabados en la eternidad, y jamás los olvidaré.</p>
+    </div>
+      <div class="foto">
+        <img src="IMC/dragonball.jpg" alt="Risas infinitas">
+        <p>Que manera de reirme contigo mi niña, contigo es imposible ser serio, de verdad me encanta cuando jugueteamos y hacemos estupideces juntos. Me haces amarte de una manera que ni yo sabia que podia hacerlo.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Pocoseria.jpg" alt="Risas infinitas">
+        <p>Estas son algunas de las fotos que veo cuando te extraño y pienso en lo mucho que te amo, en como nuestro amor y conexion son unicos en el universo.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Labios.jpg" alt="Risas infinitas">
+        <p>En tus ojos, encuentro el universo entero, y en tu risa, mi paz...Lo que más amo de nosotros es que somos nuestra propia historia, escrita en cada mirada y en cada sonrisa.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Completos.jpg" alt="Risas infinitas">
+        <p>Esta foto es especial, por que estabamos con el sendo bajon y fuimos a comer completos en el tabo, yo me comi 3 completos y tu 1, en eso momento me di cuenta que soy entero gula.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/collage.jpg" alt="Risas infinitas">
+        <p>Te juro mi amor desde el primer dia hasta el infinito, cada paso que damos juntos es magico. Porque ademas el viaje nunca tendra fin si viajas con el amor de tu vida.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Playita.jpg" alt="Risas infinitas">
+        <p>Esta foto es realmente magica, fue la primera foto que subi contigo a las historias de ig y donde supe que habia sido el mejor viaje a la playa que pude haber tenido y tu tienes todo el credito.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Empanada.jpg" alt="Risas infinitas">
+        <p>Nada que decir de esto, gracias por preguntar donde vendian estas tremendas empanadas por que a mi me habia dado vergüenza preguntar jajaja, atesoro estos momentos porque aunque suenen insignificantes o sencillos significan mucho para mi.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Bigotudos.jpg" alt="Risas infinitas">
+        <p>Jajaja aqui fue donde conociste a parte de mi familia, quien diria que nos vemos hermosos teniendo bigotes jajaja</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/BestFoto.jpg" alt="Risas infinitas">
+        <p>Esta foto me cautiva profundamente, porque más que el momento en sí, creo que refleja nuestra esencia. Tú, siendo la estrella más brillante de mi universo, y yo, completamente hechizado y enamorado de tu luz.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/ThoseEyes.jpg" alt="Risas infinitas">
+        <p>Sinceramente, Javiera, tus ojos son un reflejo de una belleza única. Me pierdo en ellos una y otra vez, y ahora, hasta la luna se siente celosa, porque me encanta más admirar tus ojos que su luz en el cielo.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/Hermosos.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/Hermosos.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Podría ver estos videos una y otra vez, y jamás me cansaré de admirar la profundidad de tu belleza, que siempre me deja sin palabras.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/Random1.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/Random1.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Realmente me encanta lo estupidos que somos, 0 vergüenza</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/Random2.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/Random2.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Este video me gusta porque ademas de reirnos juntos me pegas el wate como un gatito, suavecito jajaja</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/wate.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/Wate.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Y bueno aqui no, aca me pegaste un wate fuerte JAJAJA, pero igual te amo por que me haces harto reir.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/ComoTeamoJaviera.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/ComoTeamoJaviera.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Si yo pensaba que era esquizofrenico, llegaste tu y me quitaste el trono mi amor. Mi esquizofrenica como te amo.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/ParejaEnamorada.jpg" alt="Risas infinitas">
+        <p>Estoy como para gritarle al mundo que te amo, no me da miedo gritarselo a los cuatro vientos, te amare de mil maneras de aqui hasta el infinito, a traves del tiempo y del espacio.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/GersitoJavierita.jpg" alt="Risas infinitas">
+        <p>Haber pasado año nuevo contigo fue algo realmente especial, me senti especialmente acogido ese dia, y te agradezco mucho haber pasado esa festividad conmigo, fue realmente algo muy hermoso, aunque no sacamos muchas fotos para esa ocasion.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Preciosos.jpg" alt="Risas infinitas">
+        <p>Que me veo raro sin lentes jajaja, aqui estabamos en macul, cuando fue la revelacion de genero del Damian y la Gabriela. Fue entero bacan ese dia jajaja con excepcion de que el Javier me saco la polera. </p>
+      </div>
+      <div class="foto">
+        <img src="IMC/GersonMacul.jpg" alt="Risas infinitas">
+        <p>Es que somos hermosos, mira lo felices que somos, este momento es memorable porque me cuidaste harto y me hiciste sentir parte de tu familia.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Random.jpg" alt="Risas infinitas">
+        <p>Si hay otra cosa que me encanta de ti son tus gestos. JAJAJA me gusta muchisimo como te expresas con gestos, pero hay uno que me encanta y amare el resto de mi vida, y es cuando arrugas la nariz. Mi gesto favorito.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/IsaSaltando.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/IsaSaltando.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Y este pedacito de cielo? La isabella solo se ha encargado de robarse mi corazón cada vez mas y me encanta. Encariñarme con ella es algo que fue totalmente magico, es que es demasiado linda la Isabellita:(</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/regalosIsa.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/regalosIsa.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>No sabes la alegria que me dio ver a la Isa feliz en año nuevo, me da mucha ternura, desde que dice que mi auto es suyo, hasta que dice que trabajo para comprarle huevitos sorpresa, la amo a esa niña.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/JaviDurmiendo.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/JaviDurmiendo.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>-Javi me ayudas a hacer la cama?</p><p>- Bueno amor te ayudo. </p><p>-Tambien Javiera: </p><p>ella raja mientras yo hacia la cama, como te adoro mujer.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/GersonVilos.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+          <source src="IMC/GersonVilos.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Pasar estos momentos junto a ti fue algo que jamas olvidare, te amo con la fuerza de todo lo que nunca podre explicarte.</p>
+      </div>
+      <div class="video" onclick="expandirVideo('IMC/GersonJavi.mp4')">
+        <video class="video-preview" autoplay muted loop playsinline>
+            <source src="IMC/GersonJavi.mp4" type="video/mp4">
+          Tu navegador no soporta videos.
+        </video>
+        <p>Este video me encanta, te ves tan hermosa, me encanta la forma en que me miras y solo me hace decir que eres mi universo favorito.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/CumpleañosIsa.jpg" alt="Risas infinitas">
+        <p>El cumpleaños de la isabella, una ocasion tan linda que me gusto tanto haber compartido contigo, ayudarte a prepararle el cumpleaños, fui feliz ayudandote y viendo lo feliz que fue la isabella en su cumpleaños. Las amo.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/CumpleañosIsabellita.jpg" alt="Risas infinitas">
+        <p>Ver lo feliz que se puso cuando abrió los regalitos me llenó el alma por completo (para nada me ayudaste a escogerlos jajaja). Tú e Isabella son como pedacitos de sol que iluminan mis días cada vez que las miro.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/PreciosuraNovia.jpg" alt="Risas infinitas">
+        <p>llegaste a mi vida cuando menos me lo esperaba pero cuando mas te anhelaba, me rescataste de muchas cosas, sanaste cosas que tu no rompiste y no sabes lo mucho que te lo agradezco. Te amo tanto que mi silencio lleva tu nombre. Esta es mi foto favorita.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/SanValetinSorpresa.jpg" alt="Risas infinitas">
+        <p>Me hiciste pensar que no te iba a poder ver en San Valentin y decidi salir temprano de la pega para ir a los Vilos, pero entonces ya me habias ganado y me preparaste una hermosa sorpresa, jamas espere que hicieras ese hermoso gesto.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/SanValentin.jpg" alt="Risas infinitas">
+        <p>Armamos este rompecabeza juntos y fue un momento muy lindo, sobre todo cuando diste vuelta la limonada en la cama y estuve secandola con secador de pelo 🤣🤣 Como te amo mujer, me haces reir tanto.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/ParejaPerfecta.jpg" alt="Risas infinitas">
+        <p>Este tiempo me has hecho el hombre mas feliz que puede haber en el universo, aunque te estrese mucho y a veces ni me soportes que sepas que mi amor por ti es mucho mas grande.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/ghibli2.jpg" alt="Risas infinitas">
+        <p>Todo el mundo haciendo de estas fotos y nosotros no nos podiamos quedar atras, es que mira lo hermosos que nos vemos, hasta "animados" somos la mejor pareja del universo.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/UnderPizza.jpg" alt="Risas infinitas">
+        <p>Esta foto es muy especial, habia tenido un dia muy malo al punto que lo unico que iba arreglarlo era dormir, pero tu me compraste una pizza y palitos de ajo y me hcisite saber que todo estaria bien, fuiste mi calma y mi motivo a no rendirme.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/ghibli.jpg" alt="Risas infinitas">
+        <p>Esta foto me encanta, recopila las mejores fotos y laas transforma a un estilo animado. Me encanta lo que somos.</p>
+      </div>
+      <div class="foto">
+        <img src="IMC/Compromiso.jpg" alt="Risas infinitas">
+        <p>7 de Marzo te pedi Matrimonio y a pesar del chascarro que ocurrio que se me perdieron los anillos, estuviste casi llorando por la situacion y me dijiste que si, esto es solo el comienzo de una historia hermosa como marido y mujer, vamos por buen camino mi niña</p>
+      </div>
+
+    </div>
+    
+  
+  <!-- Video expandido -->
+    <div id="videoOverlay" class="overlay" onclick="cerrarVideo()">
+      <video id="videoExpandido" controls>
+        <source src="IMC/darkiel.mp4"  type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+    </div>
+
+  <button class="volver" onclick="window.history.back()">Volver a la página principal</button>
+  <script>
+    const preview = document.querySelector(".video-preview");
+    const overlay = document.getElementById("videoOverlay");
+    const videoExpandido = document.getElementById("videoExpandido");
+  
+    preview.addEventListener("click", () => {
+      overlay.style.display = "flex";
+      videoExpandido.currentTime = 0;
+      videoExpandido.play();
+
+    });
+    function expandirVideo(videoSrc) {
+    const overlay = document.getElementById("videoOverlay");
+    const videoExpandido = document.getElementById("videoExpandido");
+    videoExpandido.src = videoSrc;  // Establecer la fuente del video expandido
+    overlay.style.display = "flex";
+    videoExpandido.currentTime = 0;
+    videoExpandido.play();
+    }
+
+    function cerrarVideo() {
+      const overlay = document.getElementById("videoOverlay");
+      const videoExpandido = document.getElementById("videoExpandido");
+      overlay.style.display = "none";
+      videoExpandido.pause();
+      videoExpandido.src = "";  // Limpiar la fuente para evitar que continúe reproduciéndose
+    }
+    
+  </script>
+  
+</body>
+</html>

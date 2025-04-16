@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El sol volverá a brillar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #b1e4c1, #46af67);
+      color: #1e3d34;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 500px;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #14413c;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: #f3fbe9;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .meditation-guide {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .inhale-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .inhale-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #d9f0de;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      color: #1e3d34;
+      font-size: 18px;
+      animation: breathe 8s ease-in-out infinite;
+    }
+
+    .inhale-image {
+      width: 100px;
+      height: 100px;
+      margin-top: 20px;
+      margin-left: 10px;
+      animation: breathe 8s ease-in-out infinite;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .calm-button {
+      background-color: #2a6b60;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .calm-button:hover {
+      background-color: #1e5148;
+    }
+
+    .volver {
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: 600;
+      background-color: #ffffffaa;
+      padding: 10px 20px;
+      border-radius: 20px;
+      color: #1e3d34;
+      border: 1px solid #cdebd9;
+      transition: background-color 0.3s ease;
+    }
+
+    .volver:hover {
+      background-color: #f3fbe9;
+    }
+
+    .estrellas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .estrella {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background-color: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: parpadeo 2s infinite ease-in-out;
+    }
+
+    @keyframes parpadeo {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* Animación para mostrar el mensaje */
+    #mensajeCalma {
+      animation: aparecer 1s ease-in-out;
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .stitch-wrapper {
+      transform: translate(150px, -118px); /* ajusta según quieras moverlo */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>El sol siempre vuelve a brillar, aunque no lo veas ahora</h1>
+
+    <div class="card">
+      Aunque ahora sientas que estás bajo sombra, recuerda: siempre serás más fuerte que tus momentos difíciles. Lo superarás, y todo volverá a iluminarse.
+    </div>
+
+    <div class="card meditation-guide">
+      <div class="meditation-text">
+        <strong>Guía de meditación:</strong><br />
+        Respira hondo, mientras inhalas por la nariz y luego<br />
+        exhalas por la boca, en un ciclo lento y profundo.
+      </div>
+      <div class="inhale-wrapper">
+        <div class="inhale-circle">Inhalar</div>
+        <div class="stitch-wrapper">
+          <img src="IMC/stitch.jpg" class="inhale-image" alt="Stitch respirando" />
+        </div>
+      </div>
+      
+
+    <button class="calm-button" onclick="mostrarMensaje()">Cálmate</button>
+
+    <div class="card" id="mensajeCalma" style="display:none;">
+      Sé que hay días en los que todo pesa, donde el mundo parece más gris y las fuerzas flaquean. Pero quiero que sepas algo: estás hecha de luz, incluso cuando no la ves. Yo creo en ti, incluso cuando tú dudas. Y aunque hoy llores, el sol volverá a salir… y cuando lo haga, ahí estaré yo, tomándote de la mano. 
+    </div>
+
+    <div class="card">
+      Gracias por ser alguien con la capacidad de superar tanto.
+    </div>
+
+    <a href="PorqueTeAmo.html" class="volver">Volver al inicio</a>
+  </div>
+
+  <div class="estrellas" id="estrellas"></div>
+
+  <script>
+    function mostrarMensaje() {
+      document.getElementById('mensajeCalma').style.display = 'block';
+      document.getElementById('mensajeCalma').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Generador de estrellas
+    const estrellasContainer = document.getElementById("estrellas");
+    for (let i = 0; i < 200; i++) {
+      const estrella = document.createElement("div");
+      estrella.classList.add("estrella");
+      estrella.style.top = Math.random() * 100 + "%";
+      estrella.style.left = Math.random() * 100 + "%";
+      estrella.style.animationDelay = Math.random() * 2 + "s";
+      estrella.style.animationDuration = (1 + Math.random() * 2) + "s";
+      estrellasContainer.appendChild(estrella);
+    }
+  </script>
+</body>
+</html>

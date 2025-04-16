@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tu logro es una prueba más de lo increíble que eres</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff8dc;
+      overflow-x: hidden;
+      font-family: 'Pacifico', cursive;
+      position: relative;
+      padding-bottom: 80px;
+    }
+    body::after {
+      content: '';
+      display: block;
+      height: 10px; /* asegura espacio mínimo pero evita scroll excesivo */
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      color: #d35400;
+      font-size: 2.5em;
+    }
+
+    .carta {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 1.2em;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .aplausos-btn {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 30px;
+      background: #e17055;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.3em;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .explosion {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #fd79a8, transparent);
+      border-radius: 50%;
+      animation: explode 1s ease-out forwards;
+      z-index: 1000;
+    }
+
+    @keyframes explode {
+      to {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+      }
+    }
+
+    .imagen-logro {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+      max-width: 400px;
+      margin: 40px auto 20px;
+    }
+
+    .segunda-carta {
+      display: none;
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .volver {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .volver a {
+      background: #fdcb6e;
+      padding: 12px 25px;
+      border-radius: 10px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .globo {
+      position: absolute;
+      width: 40px;
+      height: 50px;
+      background: radial-gradient(circle at 30% 30%, #ff7675, #d63031);
+      border-radius: 50% 50% 50% 50%;
+      box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+      animation: flotar 6s infinite ease-in-out;
+    }
+
+    .hilo {
+      position: absolute;
+      width: 2px;
+      height: 30px;
+      background: #555;
+      left: 50%;
+      top: 100%;
+      animation: ondear 2s infinite alternate;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100vh); }
+    }
+
+    @keyframes ondear {
+      0% { transform: rotate(-15deg); }
+      100% { transform: rotate(15deg); }
+    }
+
+    .serpentina {
+      position: absolute;
+      width: 10px;
+      height: 60px;
+      background: linear-gradient(to bottom, red, yellow, green, blue);
+      animation: girar 5s infinite linear, caer 6s infinite ease-in;
+      border-radius: 5px;
+      opacity: 0.7;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes caer {
+      0% { top: -100px; }
+      100% { top: 110vh; }
+    }
+
+    @keyframes boom {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+
+    /* Fuegos artificiales dinámicos */
+    .firework {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tu logro es una prueba más de lo increíble que eres</h1>
+
+  <div class="carta">
+    Amor… ¡lo lograste! 💪✨  
+    No sabes lo feliz y orgulloso que me siento de ti.  
+    Cada paso que das es un recordatorio de lo fuerte, capaz y maravillosa que eres.  
+    Te mereces todas las cosas buenas que están pasando y las que vienen.  
+    ¡Sigue soñando en grande!  
+    Estoy aquí, aplaudiéndote con el corazón, amándote en cada logro y acompañándote siempre.  
+    ¡Felicidades, mi amor! 🎉  
+  </div>
+
+  <button class="aplausos-btn" onclick="celebrar()">¡APLAUSOS!</button>
+
+  <img id="imgLogro" class="imagen-logro" src="IMC/piolin.jpg" alt="Imagen de logro">
+
+  <div id="segundaCarta" class="segunda-carta">
+    Amor mío…  
+    Este logro es solo el principio de todo lo que vas a conquistar.  
+    Porque tú eres de esas personas que no se rinden, que brillan con todo lo que hacen.  
+    Estoy tan orgulloso de ti, tan feliz de verte crecer, avanzar y cumplir tus metas.  
+    Te amo profundamente, y siempre voy a estar aquí, a tu lado, celebrando contigo cada pasito hacia tus sueños.  
+    ¡Tú puedes con todo! 🌟  
+  </div>
+
+  <div class="volver"><a href="PorqueTeAmo.html">Volver a la página principal</a></div>
+
+  <!-- 🎈 Globos -->
+  <script>
+    for (let i = 0; i < 10; i++) {
+      const globo = document.createElement("div");
+      globo.className = "globo";
+      globo.style.left = Math.random() * 100 + "vw";
+      globo.style.top = Math.random() * 100 + "vh";
+      const hilo = document.createElement("div");
+      hilo.className = "hilo";
+      globo.appendChild(hilo);
+      document.body.appendChild(globo);
+    }
+  
+    for (let i = 0; i < 20; i++) {
+      const serp = document.createElement("div");
+      serp.className = "serpentina";
+      serp.style.left = Math.random() * 100 + "vw";
+      serp.style.animationDelay = Math.random() * 3 + "s";
+      document.body.appendChild(serp);
+    }
+  
+    function randomColor() {
+      const colores = ["#fd79a8", "#74b9ff", "#55efc4", "#ffeaa7", "#ff7675", "#a29bfe"];
+      return colores[Math.floor(Math.random() * colores.length)];
+    }
+  
+    function mostrarFuegosArtificiales() {
+  let tiempoTotal = 5000;
+  let intervalo = 500;
+  let tiempoPasado = 0;
+
+  const intervaloFuegos = setInterval(() => {
+      for (let i = 0; i < 5; i++) {
+        const firework = document.createElement("div");
+        firework.className = "firework";
+        const size = Math.random() * 40 + 80 + "px"; // 🔥 Tamaño aumentado aquí
+        firework.style.width = size;
+        firework.style.height = size;
+        firework.style.background = `radial-gradient(circle, ${randomColor()} 0%, transparent 70%)`;
+        firework.style.left = Math.random() * 100 + "vw";
+        firework.style.top = Math.random() * 60 + 10 + "vh";
+        firework.style.animation = `boom 1.5s ease-out forwards`;
+        document.body.appendChild(firework);
+
+        setTimeout(() => {
+          firework.remove();
+        }, 1500);
+      }
+
+      tiempoPasado += intervalo;
+      if (tiempoPasado >= tiempoTotal) clearInterval(intervaloFuegos);
+    }, intervalo);
+  }
+
+  function celebrar() {
+    const explosion = document.createElement("div");
+    explosion.className = "explosion";
+    document.body.appendChild(explosion);
+
+    const audio = new Audio("audio/Aplausos.mp3"); // si está en la carpeta 'audios'
+    audio.play();
+
+    // Mostrar imagen y segunda carta
+    const img = document.getElementById("imgLogro");
+    img.style.display = "block";
+    setTimeout(() => {
+      img.style.opacity = 1;
+    }, 10);
+
+    document.getElementById("segundaCarta").style.display = "block";
+
+    setTimeout(() => {
+      explosion.remove();
+    }, 1000);
+
+    mostrarFuegosArtificiales();
+  }
+
+  </script>
+  
+</body>
+</html>

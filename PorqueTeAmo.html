@@ -111,27 +111,15 @@
       background-color: #4a126d;
     }
 
-    #corazones-fondo {
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 0; /* Queda detrás del contenido */
-    }
-    
     .heart {
-      position: absolute;
+      position: fixed;
       bottom: -50px;
       font-size: 24px;
       opacity: 0;
       animation: flotar 8s infinite ease-in;
-      color: white;
-      z-index:0;
+      z-index: -1;
+      pointer-events: none;
     }
-
 
     @keyframes flotar {
       0% { transform: translateY(0) translateX(0); opacity: 0; }
@@ -142,11 +130,10 @@
   </style>
 </head>
 <body>
+
   <!-- Corazones en el fondo -->
   <script>
     const emojis = ['❤️','💕','❣️','💓','💗','💖','💘','💝','💟','😍','😘','💌'];
-    const contenedor = document.getElementById("corazones-fondo");
-  
     for (let i = 0; i < 25; i++) {
       const heart = document.createElement("span");
       heart.classList.add("heart");
@@ -154,10 +141,9 @@
       heart.style.left = `${Math.random() * 100}%`;
       heart.style.fontSize = `${16 + Math.random() * 30}px`;
       heart.style.animationDelay = `${Math.random() * 8}s`;
-      contenedor.appendChild(heart);
+      document.body.appendChild(heart);
     }
   </script>
-
 
   <h1>Distintas maneras de amarte para distintos momentos que necesites</h1>
   <p>Este rincón es solo tuyo, para cuando el corazón necesite un abrazo en forma de palabras, sonidos o recuerdos</p>
@@ -387,6 +373,6 @@
       });
     }
   </script>
-  <div id="corazones-fondo"></div>
+
 </body>
 </html>
